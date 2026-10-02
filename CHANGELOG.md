@@ -5,6 +5,9 @@ All notable changes are documented here. This project follows
 
 ## [Unreleased]
 
+- Fixed the XENEON menu-bar cover remaining as a black strip after wake when
+  macOS no longer reserved a menu-bar inset on that display.
+
 ## [0.1.0] - 2026-10-01
 
 - Added absolute touch mapping for the CORSAIR XENEON EDGE on macOS.

@@ -121,7 +121,9 @@ as a trackpad and can route touches to whichever display was previously active.
 When a touch begins while the pointer is on another display, the driver returns
 the pointer and restores the previously frontmost app after the gesture. A
 non-activating black cover hides and intercepts the menu-bar strip on the
-XENEON display without changing the menu bar on other screens.
+XENEON display without changing the menu bar on other screens. The cover follows
+the display's current reserved menu-bar inset and disappears when macOS exposes
+the full XENEON height, including after sleep/wake or with menu-bar auto-hide.
 
 ## Architecture
 
