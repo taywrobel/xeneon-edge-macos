@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-REPOSITORY="${1:-taywrobel/xenon-edge-macos}"
+REPOSITORY="${1:-taywrobel/xeneon-edge-macos}"
 API="https://api.github.com/repos/$REPOSITORY/releases/latest"
 TMP="$(mktemp -d)"
 

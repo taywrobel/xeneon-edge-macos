@@ -13,12 +13,12 @@ direct touch interactions, and exposes diagnostics for the connected hardware.
 Run the checksum-verifying installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/taywrobel/xenon-edge-macos/master/scripts/install-release.sh \
+curl -fsSL https://raw.githubusercontent.com/taywrobel/xeneon-edge-macos/master/scripts/install-release.sh \
   | bash
 ```
 
 Or download `Xeneon-Touch-<version>.zip` from
-[Releases](https://github.com/taywrobel/xenon-edge-macos/releases), extract it,
+[Releases](https://github.com/taywrobel/xeneon-edge-macos/releases), extract it,
 and double-click `Install.command`.
 
 The installer places `Xeneon Touch.app` in `~/Applications`, configures a
@@ -148,7 +148,7 @@ make package
 ```
 
 This writes a versioned ZIP and `SHA256SUMS` to `dist/`. `VERSION` is the
-release source of truth. Pushing a matching tag such as `v1.0.0` runs the
+release source of truth. Pushing a matching tag such as `v1.0.1` runs the
 release workflow and publishes both files.
 
 Set `CODESIGN_IDENTITY` to a Developer ID Application identity when producing

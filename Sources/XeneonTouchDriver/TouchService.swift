@@ -9,7 +9,7 @@ import XeneonTouchCore
 /// so a cursor-visibility watcher can tell our touch-driven events apart from a
 /// real mouse/trackpad. Read it back with
 /// `CGEventGetIntegerValueField(event, .eventSourceUserData)`.
-public let kXeneonTouchEventTag: Int64 = 0x58_454E_4F4E  // "XENON"
+public let kXeneonTouchEventTag: Int64 = 0x5845_4E45_4F4E  // "XENEON"
 
 /// Phase of a continuous edge pull (driven from raw touch positions, since
 /// vertical drags reach the app only as scroll events).

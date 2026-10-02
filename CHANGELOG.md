@@ -5,6 +5,11 @@ All notable changes are documented here. This project follows
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-02
+
+- Corrected the repository name and remaining `Xenon` references to the
+  product's `XENEON` spelling.
+
 ## [1.0.0] - 2026-10-02
 
 - Published the first stable release of the XENEON EDGE macOS touch
@@ -22,6 +27,7 @@ All notable changes are documented here. This project follows
 - Added reconnect, sleep/wake, display-layout, and native-mode handling.
 - Added diagnostics, smoke tests, XCTest coverage, app packaging, and login startup.
 
-[Unreleased]: https://github.com/taywrobel/xenon-edge-macos/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/taywrobel/xenon-edge-macos/releases/tag/v1.0.0
-[0.1.0]: https://github.com/taywrobel/xenon-edge-macos/releases/tag/v0.1.0
+[Unreleased]: https://github.com/taywrobel/xeneon-edge-macos/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/taywrobel/xeneon-edge-macos/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/taywrobel/xeneon-edge-macos/releases/tag/v1.0.0
+[0.1.0]: https://github.com/taywrobel/xeneon-edge-macos/releases/tag/v0.1.0
