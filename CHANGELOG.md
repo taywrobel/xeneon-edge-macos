@@ -5,6 +5,10 @@ All notable changes are documented here. This project follows
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-02
+
+- Published the first stable release of the XENEON EDGE macOS touch
+  compatibility layer.
 - Removed the XENEON menu-bar cover because an overlay cannot reclaim macOS's
   reserved menu-bar area and could remain as a black strip after wake.
 
@@ -18,5 +22,6 @@ All notable changes are documented here. This project follows
 - Added reconnect, sleep/wake, display-layout, and native-mode handling.
 - Added diagnostics, smoke tests, XCTest coverage, app packaging, and login startup.
 
-[Unreleased]: https://github.com/taywrobel/xenon-edge-macos/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/taywrobel/xenon-edge-macos/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/taywrobel/xenon-edge-macos/releases/tag/v1.0.0
 [0.1.0]: https://github.com/taywrobel/xenon-edge-macos/releases/tag/v0.1.0

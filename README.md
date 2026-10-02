@@ -148,7 +148,7 @@ make package
 ```
 
 This writes a versioned ZIP and `SHA256SUMS` to `dist/`. `VERSION` is the
-release source of truth. Pushing a matching tag such as `v0.1.0` runs the
+release source of truth. Pushing a matching tag such as `v1.0.0` runs the
 release workflow and publishes both files.
 
 Set `CODESIGN_IDENTITY` to a Developer ID Application identity when producing
