@@ -1,11 +1,10 @@
-import AppKit
 import CoreGraphics
 import Foundation
 import XeneonTouchCore
 import XeneonTouchDriver
 
 enum Mode {
-  case run, diagnose, listDisplays, displayModes, setMode, screenInset, help
+  case run, diagnose, listDisplays, displayModes, setMode, help
 }
 
 struct Options {
@@ -30,7 +29,6 @@ func parseArgs() -> Options {
     case "set-mode":
       opts.mode = .setMode
       if let n = args.dropFirst().first, let v = Int32(n) { opts.modeNumber = v }
-    case "screen-inset": opts.mode = .screenInset
     case "help": opts.mode = .help
     default: opts.mode = .help
     }
@@ -115,15 +113,7 @@ case .setMode:
   let ok = CGSDisplayModes.apply(n, to: edge.id)
   print(ok ? "Switched Edge to mode \(n)." : "Mode switch failed.")
   exit(ok ? 0 : 1)
-case .screenInset:
-  guard let displayID = opts.displayID else { exit(2) }
-  _ = NSApplication.shared
-  guard let inset = XeneonMenuBarCover.currentTopInset(for: displayID) else { exit(1) }
-  print(inset)
 case .run:
-  NSApplication.shared.setActivationPolicy(.accessory)
-  let menuBarCover = XeneonMenuBarCover()
-  menuBarCover.start()
   let config = TouchServiceConfig(
     flipX: opts.flipX, flipY: opts.flipY, swapXY: opts.swapXY,
     preferredDisplayID: opts.displayID, preferSeize: !opts.noSeize)

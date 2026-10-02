@@ -5,8 +5,8 @@ All notable changes are documented here. This project follows
 
 ## [Unreleased]
 
-- Fixed the XENEON menu-bar cover remaining as a black strip after wake when
-  macOS no longer reserved a menu-bar inset on that display.
+- Removed the XENEON menu-bar cover because an overlay cannot reclaim macOS's
+  reserved menu-bar area and could remain as a black strip after wake.
 
 ## [0.1.0] - 2026-10-01
 

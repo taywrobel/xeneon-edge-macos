@@ -53,7 +53,7 @@ controller is a WingCoolTouch/WCH HID device (`27c0:0859`) with:
 | Mouse-interface fallback | Implemented |
 | Reconnect, sleep/wake, and display-layout recovery | Implemented |
 | Preserve focus and pointer on the working display | Implemented |
-| Hide the menu bar on the XENEON only | Implemented with a non-activating cover |
+| Hide the menu bar on the XENEON only | Not supported by macOS per display |
 
 Earlier research found the multitouch interface silent on macOS even after the
 Windows HID mode switch was replayed. A newer implementation reports success
@@ -119,11 +119,14 @@ restart the service. Without exclusive ownership, macOS also treats the panel
 as a trackpad and can route touches to whichever display was previously active.
 
 When a touch begins while the pointer is on another display, the driver returns
-the pointer and restores the previously frontmost app after the gesture. A
-non-activating black cover hides and intercepts the menu-bar strip on the
-XENEON display without changing the menu bar on other screens. The cover follows
-the display's current reserved menu-bar inset and disappears when macOS exposes
-the full XENEON height, including after sleep/wake or with menu-bar auto-hide.
+the pointer and restores the previously frontmost app after the gesture.
+
+macOS does not provide a supported way for a background compatibility service
+to hide the menu bar and reclaim its reserved area on only one display.
+Application presentation options affect every display, while native fullscreen
+dedicates the XENEON to a single app. Enable macOS menu-bar auto-hide to reclaim
+the area globally, or use fullscreen mode in an app intended to occupy the
+XENEON. The driver does not place an overlay over the menu bar.
 
 ## Architecture
 

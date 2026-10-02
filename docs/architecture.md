@@ -14,8 +14,6 @@
 7. CoreGraphics posts tagged events and restores the cursor after touch ends.
 8. If the gesture began while another display owned the pointer, the previously
    frontmost application is reactivated after the touch or momentum completes.
-9. A non-activating AppKit panel covers only the menu-bar inset currently
-   reserved on the XENEON.
 
 ## Target responsibilities
 
@@ -48,8 +46,3 @@ mode diagnosis. It is intentionally separate from any dashboard or kiosk UI.
   without USB re-enumeration.
 - Synthetic events are tagged so they are not mistaken for physical mouse
   movement.
-- The menu-bar cover cannot become key or main, so touching it does not take
-  workspace focus.
-- Sleep/wake and display changes hide the cover immediately, then query the
-  inset from a short-lived process because long-running `NSScreen` geometry can
-  remain stale after wake.
