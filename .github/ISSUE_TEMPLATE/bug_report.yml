@@ -1,0 +1,59 @@
+name: Bug report
+description: Report incorrect touch mapping, startup, display, or gesture behavior.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include serial numbers or other private hardware identifiers.
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and architecture
+      placeholder: MacBook Pro M3 Pro, arm64
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: 15.7
+    validations:
+      required: true
+  - type: input
+    id: release
+    attributes:
+      label: Xeneon Touch version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection
+      options:
+        - USB-C video and touch
+        - HDMI/DisplayPort video plus separate USB touch
+        - Dock or hub
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Include relevant output from `swift run xeneon-touch diagnose` or the service log.
+      render: shell

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint
+        run: swift format lint --recursive --strict Sources Tests Package.swift
+      - name: Check shell scripts
+        run: bash -n scripts/*.sh packaging/*.command
+      - name: Test
+        run: make test && make test-full
+      - name: Release build
+        run: swift build -c release
+      - name: Package app
+        run: make package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xeneon-touch-${{ github.sha }}
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS

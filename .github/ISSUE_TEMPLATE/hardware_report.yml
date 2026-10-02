@@ -1,0 +1,39 @@
+name: Hardware compatibility report
+description: Share results from a different Mac, firmware revision, connection, or macOS release.
+title: "[Hardware]: "
+labels: ["hardware"]
+body:
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and architecture
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+    validations:
+      required: true
+  - type: textarea
+    id: topology
+    attributes:
+      label: Display and USB connection topology
+    validations:
+      required: true
+  - type: checkboxes
+    id: capabilities
+    attributes:
+      label: Working capabilities
+      options:
+        - label: Absolute single touch
+        - label: Dragging
+        - label: One-finger scrolling
+        - label: Two-finger scrolling
+        - label: Pinch zoom
+        - label: Pointer/focus restoration
+        - label: XENEON-only menu-bar cover
+  - type: textarea
+    id: details
+    attributes:
+      label: Notes and sanitized diagnostics
